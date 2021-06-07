@@ -1,5 +1,4 @@
 #NOTES: Need to add the previous build button
-#Need to scrape for the new armor parts and skills
 #Need to add the total resources for each build, that are required
 
 
