@@ -287,3 +287,5 @@ def build_generator_main(my_skills, talisman_skills, gem_list):
     return top_10_sorted_by_level_3
 
 
+
+
