@@ -47,19 +47,19 @@ class SkillOption:
 
     def trace_skill_choice_value(self, *args):
         print(f"The value of the variable is now {self.skill_choice.get()}")
-        #self.skill_level = IntVar()
+        self.skill_level = IntVar()
         self.max_skill_value = int(skills_data.get(self.skill_choice.get()).get("max_level"))
-        #self.skill_level.set(value=self.max_skill_value)
-        self.max_level_label = Label(window, text=self.max_skill_value)
-        self.max_level_label.config(width=30, pady=10, padx= 10)
-        #self.skill_level.trace_add("write", self.trace_skill_level_choice)
-        self.max_level_label.grid(row=self.default_value, column=1)
-        #self.skill_dict = {self.skill_choice.get(): self.skill_level.get()}
+        self.skill_level.set(value=self.max_skill_value)
+        self.skill_level_option = OptionMenu(window, self.skill_level, *SKILL_OPTIONS)
+        self.skill_level_option.config(width=30, pady=10)
+        self.skill_level_option.grid(row=self.default_value, column=1)
+        self.skill_level.trace_add("write", self.trace_skill_level_choice)
+        self.skill_dict = {self.skill_choice.get(): self.skill_level.get()}
 
-    '''
+
     def trace_skill_level_choice(self, *args):
         self.skill_dict = {self.skill_choice.get(): self.skill_level.get()}
-    '''
+
 
 class GemOption:
 
@@ -631,3 +631,5 @@ def create_armor_set_page(best_builds, btn_type="next", number_to_display=0):
 
 create_starting_page()
 window.mainloop()
+
+
